@@ -1,1 +1,52 @@
-<p>heroeslist works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>Listas de Dragon Ball</h1>
+  </div>
+  <div class="card-body">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        Filtrar por:
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Filtrar héroes">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <h3>Filtro</h3>
+      </div>
+    </div>
+
+    <!-- Botón fuera de la tabla -->
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" (click)="showImage()">
+        {{muestraImage ? 'Ocultar' : 'Mostrar'}} Imagen
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped align-middle text-center">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Raza</th>
+            <th>KI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let heroes of heroes">
+            <td>
+              <img *ngIf="muestraImage" [src]="heroes.image" alt="{{heroes.nombre}}" width="100" height="150">
+            </td>
+            <td>{{heroes.nombre}}</td>
+            <td>{{heroes.description}}</td>
+            <td>{{heroes.rece}}</td>
+            <td>{{heroes.ki}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
