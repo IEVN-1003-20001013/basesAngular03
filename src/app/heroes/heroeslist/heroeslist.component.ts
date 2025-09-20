@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IHeroes } from '../heroes';
 
 @Component({
   selector: 'app-heroeslist',
@@ -11,21 +12,19 @@ export class HeroeslistComponent {
 imageWidth=20;
 imageMargin=3;
 muestraImage=true;
-listFilter:string='';
+listFilter:string='True';
 
 showImage():void{
   this.muestraImage=!this.muestraImage
 }
 
-heroes:any[]=[
+heroes:IHeroes[]=[
   {
      image:"https://dragonball-api.com/transformaciones/Broly_DBS_Base.webp",
      nombre:"Broly",
      description: "final flash",
      rece:"saiyan",
      ki: "7162671627"
-
-
 }, {
      image:"https://dragonball-api.com/characters/15Dokkan.webp",
      nombre:"15",
@@ -38,7 +37,7 @@ image:"https://dragonball-api.com/characters/Lunch_traje_de_sirvienta_en_el_mang
      nombre:"milk",
      description: "final flash",
      rece:"Dios",
-     ki: "o0210201'920101'20101020"
+     ki: "7162671627"
 },
 ]
 }

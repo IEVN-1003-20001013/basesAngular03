@@ -1,0 +1,31 @@
+<div class="col-6">
+  <div class="mb-3">
+    <div class="form-group pt-4">
+      <label for="nume1">pon el num 1</label>
+      <input type="number" class="form-control no-spin" id="nume1" placeholder="Escribe número 1">
+    </div>
+
+    <div class="form-group">
+      <label for="nume2">pon el num 2</label>
+      <input type="number" class="form-control no-spin" id="nume2" placeholder="Escribe número 2">
+    </div>
+    <hr>
+    <div class="d-flex gap-3">
+      <label class="form-check-label">
+        <input class="form-check-input me-1" type="radio" name="operacion" (click)="calcular('sumatoria')"> Sumar
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input me-1" type="radio" name="operacion" (click)="calcular('restacion')"> Restar
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input me-1" type="radio" name="operacion" (click)="calcular('multiplicacion')"> Multiplicar
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input me-1" type="radio" name="operacion" (click)="calcular('dividir')"> Dividir
+      </label>
+    </div>
+  </div>
+  <div class="col-6 mt-3">
+    <h1>Tu resultado es: {{ resultado }}</h1>
+  </div>
+</div>
