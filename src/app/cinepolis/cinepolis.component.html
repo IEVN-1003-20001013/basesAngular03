@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <div class="card p-4">
+        <h2 class="card-title text-center mb-4">Bienvenido a Cinépolis</h2>
+        <h3 class="card-subtitle text-muted text-center mb-4">Llene los datos, por favor</h3>
+
+        <form>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Ingrese su Nombre:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+            </div>
+
+            <div class="mb-3">
+                <label for="compradores" class="form-label">¿Cuántos Compradores son?</label>
+                <input type="number" class="form-control" id="compradores" placeholder="Número de compradores">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">¿Tiene Tarjeta de descuento?:</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tarjeta" id="si" value="si">
+                        <label class="form-check-label" for="si">Simon</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tarjeta" id="no" value="no">
+                        <label class="form-check-label" for="no">Nop</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="boletos" class="form-label">Cantidad de Boletos:</label>
+                <input type="number" class="form-control" id="boletos" placeholder="Número de boletos">
+            </div>
+
+            <div class="text-center mt-4">
+                <h3 class="mb-3">Resultado</h3>
+                <div class="mb-3">
+                    <label class="form-label">Lo que debe Pagar es:</label>
+                    <input type="text" class="form-control text-center" [value]="total" readonly>
+                </div>
+                <p class="mt-3">{{ mensaje }}</p>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <h3 class="text-center mb-3">Opciones</h3>
+                <button type="button" class="btn btn-primary btn-lg" (click)="procesar()">Procesar</button>
+                <button type="button" class="btn btn-danger btn-lg" (click)="salir()">Salir</button>
+            </div>
+        </form>
+    </div>
+</div>
