@@ -1,13 +1,28 @@
-// resistencia-formula.ts
+export interface Color {
+  nombre: string;
+  hex: string;
+  valor: number;
+  multiplicador: number;
+}
+
+export interface Tolerancia {
+  nombre: string;
+  hex: string;
+  valor: number;
+}
+
 export class ResistenciaFormula {
-  static calcular(banda1: number, banda2: number, multiplicador: number, tolerancia: number) {
-    const valorBase = parseInt(`${banda1}${banda2}`, 10);
-    const valorResistencia = valorBase * multiplicador;
-    const margen = valorResistencia * tolerancia;
+  static calcular(banda1: Color, banda2: Color, banda3: Color, tolerancia: Tolerancia) {
+    const valorBase = parseInt(`${banda1.valor}${banda2.valor}`, 10);
+    const valorResistencia = valorBase * banda3.multiplicador;
+    const valorTolerancia = valorResistencia * tolerancia.valor;
+
     return {
       valorResistencia,
-      resistenciaMinima: valorResistencia - margen,
-      resistenciaMaxima: valorResistencia + margen
+      resistenciaMaxima: valorResistencia + valorTolerancia,
+      resistenciaMinima: valorResistencia - valorTolerancia
     };
   }
 }
+
+
